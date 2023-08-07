@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'welcome#index'
+  resources :books
+  root to: 'books#index'
   get 'welcome/index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

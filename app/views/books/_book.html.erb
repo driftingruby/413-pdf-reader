@@ -1,0 +1,35 @@
+<div id="<%= dom_id book %>" class="scaffold_record">
+  <p>
+    <strong>Title:</strong>
+    <%= book.title %>
+  </p>
+
+  <div data-controller="pdf-reader" data-pdf-reader-url-value="<%= url_for(book.pdf) %>">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8 d-flex justify-content-center">
+        <canvas data-pdf-reader-target="canvas" class="w-100"></canvas>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-3">
+      <div class="col-12 col-md-8 d-flex flex-column flex-md-row justify-content-between">
+        <button
+          data-action="click->pdf-reader#prevPage"
+          class="btn btn-primary text-nowrap mb-2 mx-1 mb-md-0">
+          Previous Page
+        </button>
+
+        <input type="number" min="1"
+          data-pdf-reader-target="pageNumber"
+          data-action="change->pdf-reader#changePage"
+          class="form-control mb-2 mx-1 mb-md-0" />
+
+        <button
+          data-action="click->pdf-reader#nextPage"
+          class="btn btn-primary text-nowrap mb-2 mx-1 mb-md-0">
+          Next Page
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>

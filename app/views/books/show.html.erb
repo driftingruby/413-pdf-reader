@@ -1,0 +1,9 @@
+<%= render @book %>
+
+<div>
+  <%= link_to "Edit", edit_book_path(@book) %> |
+  <%= link_to "Destroy", book_path(@book),
+    "data-turbo-method": :delete,
+    "data-turbo-confirm": "Are you sure?" %> |
+  <%= link_to "Back to books", books_path %>
+</div>
